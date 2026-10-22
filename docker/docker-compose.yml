@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  php2shell-lab:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: php2shell-lab
+    # Bind strictly to localhost to prevent accidental exposure to the internet
+    ports:
+      - "127.0.0.1:8088:80"
+    environment:
+      - APACHE_RUN_USER=www-data
+      - APACHE_RUN_GROUP=www-data
+    # Keep the container running unless explicitly stopped
+    restart: unless-stopped
+    # Limit memory slightly above the PHP memory_limit to prevent the container from dying
+    # when PHP hits its 8M limit and crashes.
+    deploy:
+      resources:
+        limits:
+          memory: 64M

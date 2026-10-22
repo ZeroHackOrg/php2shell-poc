@@ -1,0 +1,18 @@
+# Python Virtual Environment
+venv/
+env/
+.venv/
+
+# Python Caches
+__pycache__/
+*.py[cod]
+*$py.class
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Lab Data / Loot
+loot/
+*.log
+offsets.json
