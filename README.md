@@ -249,4 +249,4 @@ This framework was built by synthesizing research from the following public disc
 
     ZeroHack Security — Framework integration, Docker lab, and UI
 
-<div align="center"> <b>ZeroHack Security — Fortifying the Digital Frontier.</b><br> <i>For authorized security testing and educational purposes only.</i> </div> ```
+
