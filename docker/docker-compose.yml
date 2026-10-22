@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   php2shell-lab:
     build:
@@ -12,6 +10,11 @@ services:
     environment:
       - APACHE_RUN_USER=www-data
       - APACHE_RUN_GROUP=www-data
+    # CRITICAL FOR EXPLOIT: Disables seccomp and allows memory layout predictability
+    security_opt:
+      - seccomp:unconfined
+    ulimits:
+      core: 0
     # Keep the container running unless explicitly stopped
     restart: unless-stopped
     # Limit memory slightly above the PHP memory_limit to prevent the container from dying
